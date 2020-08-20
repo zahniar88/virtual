@@ -17,7 +17,7 @@ class Http:
         self.HTTP_DOMAIN    = input("Masukkan nama domain >>> ")
 
     def get_http_sample(self):
-        gethttpsample           = open("sample/Http.txt", 'r')
+        gethttpsample           = open(self.command.main.CURRENT_DIR + "sample/Http.txt", 'r')
         self.GET_HTTP_SAMPLE    = gethttpsample.read()
         gethttpsample.close()
 
@@ -41,8 +41,8 @@ class Http:
 
     def create_http_conf(self):
         self.command.main.shell(
-            "echo '" + self.SAMPLE_HTTP_HAS_CHANGE + "' >> tmp/" + self.HTTP_FILENAME + ".conf" 
-            + "&& sudo mv tmp/" + self.HTTP_FILENAME + ".conf " + self.command.main.CONF_DIR 
+            "echo '" + self.SAMPLE_HTTP_HAS_CHANGE + "' >> " + self.command.main.CURRENT_DIR + "tmp/" + self.HTTP_FILENAME + ".conf" 
+            + "&& sudo mv " + self.command.main.CURRENT_DIR + "tmp/" + self.HTTP_FILENAME + ".conf " + self.command.main.CONF_DIR 
             + " && sudo a2ensite " + self.HTTP_FILENAME + ".conf && sudo nano /etc/hosts"
             )
         self.command.main.OS.system('clear')

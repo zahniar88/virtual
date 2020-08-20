@@ -10,15 +10,16 @@ load_dotenv()
 
 class Main(Command, Http, Https, Remove):
     def start_main(self):
-        self.CONF_DIR   = os.getenv('CONF_DIR') + "/"
-        self.SSL_DIR    = os.getenv("SSL_DIR") + "/"
-        self.SITE_DIR   = os.getenv("SITE_DIR")
-        self.OS         = os
-        self.define_command(self)
         self.remove_tmp()
+        self.CURRENT_DIR    = os.path.dirname(os.path.realpath(__file__)) + '/'
+        self.CONF_DIR       = os.getenv('CONF_DIR') + "/"
+        self.SSL_DIR        = os.getenv("SSL_DIR") + "/"
+        self.SITE_DIR       = os.getenv("SITE_DIR")
+        self.OS             = os
+        self.define_command(self)
 
     def remove_tmp(self):
-        os.system('rm tmp/*')
+        os.system('rm ' + self.CURRENT_DIR + 'tmp/*.conf')
 
     def shell(self, cmd):
         call(

@@ -12,14 +12,14 @@ class Https:
         self.get_confirm_https_check()
 
     def get_https_input(self):
-        self.HTTPS_FILENAME  = input("Masukkan nama file host (tanpa .conf) >>> ")
-        self.HTTPS_ROOT      = input("Masukkan lokasi root website >>> ")
-        self.HTTPS_DOMAIN    = input("Masukkan nama domain >>> ")
-        self.SSL_FILE       = input("Masukkan nama file ssl >>> ")
-        self.SSL_KEY        = input("Masukkan nama file ssl key >>> ")
+        self.HTTPS_FILENAME     = input("Masukkan nama file host (tanpa .conf) >>> ")
+        self.HTTPS_ROOT         = input("Masukkan lokasi root website >>> ")
+        self.HTTPS_DOMAIN       = input("Masukkan nama domain >>> ")
+        self.SSL_FILE           = input("Masukkan nama file ssl >>> ")
+        self.SSL_KEY            = input("Masukkan nama file ssl key >>> ")
 
     def get_https_sample(self):
-        gethttpssample           = open("sample/Https.txt", 'r')
+        gethttpssample           = open(self.command.main.CURRENT_DIR + "sample/Https.txt", 'r')
         self.GET_HTTPS_SAMPLE    = gethttpssample.read()
         gethttpssample.close()
 
@@ -45,8 +45,8 @@ class Https:
 
     def create_https_conf(self):
         self.command.main.shell(
-            "echo '" + self.SAMPLE_HTTPS_HAS_CHANGE + "' >> tmp/" + self.HTTPS_FILENAME + ".conf" 
-            + "&& sudo mv tmp/" + self.HTTPS_FILENAME + ".conf " + self.command.main.CONF_DIR 
+            "echo '" + self.SAMPLE_HTTPS_HAS_CHANGE + "' >> " + self.command.main.CURRENT_DIR + "tmp/" + self.HTTPS_FILENAME + ".conf"
+            + "&& sudo mv " + self.command.main.CURRENT_DIR + "tmp/" + self.HTTPS_FILENAME + ".conf " + self.command.main.CONF_DIR
             + " && sudo a2ensite " + self.HTTPS_FILENAME + ".conf && sudo nano /etc/hosts"
             )
         self.command.main.OS.system('clear')

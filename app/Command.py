@@ -11,7 +11,7 @@ class Command:
         self.get_command_selection()
 
     def get_command_menu(self):
-        getmenu = open('sample/Menu.txt', 'r')
+        getmenu = open(self.main.CURRENT_DIR + 'sample/Menu.txt', 'r')
         self.GET_MENU = getmenu.read()
         getmenu.close()
 
