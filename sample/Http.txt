@@ -1,0 +1,10 @@
+<VirtualHost *:80>
+        <Directory #DIR#>
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride All
+                Require all granted
+        </Directory>
+	ServerName #DOMAIN#
+	DocumentRoot #ROOT#
+</VirtualHost>
+# vim: syntax=apache ts=4 sw=4 sts=4 sr noet

@@ -1,0 +1,17 @@
+ ██████╗ ██╗  ██╗ ██████╗ ███████╗████████╗    ██╗   ██╗ ██╗
+██╔═══██╗██║  ██║██╔═══██╗██╔════╝╚══██╔══╝    ██║   ██║███║
+██║   ██║███████║██║   ██║███████╗   ██║       ██║   ██║╚██║
+██║▄▄ ██║██╔══██║██║   ██║╚════██║   ██║       ╚██╗ ██╔╝ ██║
+╚██████╔╝██║  ██║╚██████╔╝███████║   ██║        ╚████╔╝  ██║
+ ╚══▀▀═╝ ╚═╝  ╚═╝ ╚═════╝ ╚══════╝   ╚═╝         ╚═══╝   ╚═╝
+                                                            
+Pilihan menu yang dapat dilakukan:
+1. Membuat vhost dengan http   
+2. Membuat vhost dengan https
+3. Menghapus vhost yang ada
+
+0. keluar
+Peringatan: 
+- program ini meminta izin anda untuk membuat file pada direktori yang ditentukan
+- Hanya untuk apache2
+>>> 
