@@ -44,6 +44,7 @@ class Http:
             "echo '" + self.SAMPLE_HTTP_HAS_CHANGE + "' >> " + self.command.main.CURRENT_DIR + "tmp/" + self.HTTP_FILENAME + ".conf" 
             + "&& sudo mv " + self.command.main.CURRENT_DIR + "tmp/" + self.HTTP_FILENAME + ".conf " + self.command.main.CONF_DIR 
             + " && sudo a2ensite " + self.HTTP_FILENAME + ".conf && sudo nano /etc/hosts"
+            + "&& sudo systemctl restart apache2"
             )
         self.command.main.OS.system('clear')
         print('Berhasil!')
