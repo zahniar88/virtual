@@ -26,4 +26,9 @@ class Main(Command, Http, Https, Remove):
             'echo {} | sudo -S {}'.format(os.getenv('ROOT_PASSWORD'), cmd), 
             shell=True)
 
-Main().start_main()
+# checking file env
+if os.path.exists(os.path.dirname(os.path.realpath(__file__)) + "/.env"):
+    Main().start_main()
+else:
+    os.system('clear')
+    print("File .env tidak ditemukan")
